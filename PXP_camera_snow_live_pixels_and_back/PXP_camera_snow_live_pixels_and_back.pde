@@ -69,6 +69,7 @@ class Flake {                                          // this is our class that
       floor[posX]= height-2;                                 // and reset the floor for the next snow
       dead = true;
     }
+     PxPSetPixel(sourceX, sourceY, 0, 0, 0, 255, pixels, width);   // add this tp remove the original pixel
     PxPGetPixel(sourceX, sourceY, ourVideo.pixels, width);     // get the RGB from the original location of the pixel
     PxPSetPixel(posX, posY, R, G, B, 255, pixels, width);     // set the RGB of our to screen
   }
