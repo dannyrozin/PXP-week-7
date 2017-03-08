@@ -31,8 +31,8 @@ void draw() {
 void mouseMoved() {                                 // this only happens when the mouse moves so it doesnt flicker when the mouse isnt moving
   for (int x = 0; x<width; x++) {     
     for (int y = 0; y<height; y++) {   
-      randoms[x][y][0]= (int)random(-mouseX, mouseX);        // put random values for every x and y
-      randoms[x][y][1]= (int)random(-mouseX, mouseX);
+      randoms[x][y][0]= (int)random(-mouseX/10, mouseX/10);        // put random values for every x and y
+      randoms[x][y][1]= (int)random(-mouseX/10, mouseX/10);
     }
   }
 }
