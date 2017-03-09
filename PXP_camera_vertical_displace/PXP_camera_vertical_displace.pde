@@ -1,6 +1,6 @@
-// The world pixel by pixel 2016
+// The world pixel by pixel 2017
 // Daniel Rozin
-// displace pixels with sine wave
+// displace pixels vertically, initialy with sine wave but drag mouse to set a different displacement
 import processing.video.*;
 int[] displacements= new int[1280];
 Capture ourVideo;                                 // variable to hold the video object
@@ -22,10 +22,8 @@ void draw() {
     for (int y = 0; y< height; y++) {    
 
       int newY= (y+ displacements[x])% height;            // add the displacement to the y
-      int newX= (x+ displacements[y])% width;            // add the displacement to the y
       newY= constrain(newY, 0, height-1);
-      newX= constrain(newX, 0, width-1);
-      PxPGetPixel(newX, newY, ourVideo.pixels, width);          // get the R,G,B of the pixel
+      PxPGetPixel(x, newY, ourVideo.pixels, width);          // get the R,G,B of the pixel
       PxPSetPixel(x, y, R, G, B, 255, pixels, width);     // set the RGB of our to screen
     }
   }
