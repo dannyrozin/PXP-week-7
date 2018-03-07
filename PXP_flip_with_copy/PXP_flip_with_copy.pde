@@ -1,4 +1,4 @@
-// The world pixel by pixel 2016
+// The world pixel by pixel 2018
 // Daniel Rozin
 // fliping pixels on X and Y using the copy() function
 import processing.video.*;

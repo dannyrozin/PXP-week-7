@@ -1,4 +1,4 @@
-// The world pixel by pixel 2016
+// The world pixel by pixel 2018
 // Daniel Rozin
 // rotate pixels 
 import processing.video.*;
@@ -6,7 +6,7 @@ float angle;
 Capture ourVideo;                                 // variable to hold the video object
 void setup() {
   size(1280, 720);
-  frameRate(130);
+  frameRate(30);
   ourVideo = new Capture(this, width, height);    // open the capture in the size of the window
   ourVideo.start();
 }
