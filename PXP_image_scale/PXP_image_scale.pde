@@ -1,4 +1,4 @@
-// The world pixel by pixel 2018
+// The world pixel by pixel 2019
 // Daniel Rozin
 // scale an image
 
@@ -8,7 +8,7 @@ float scale = 2;
 void setup() {
   size(1000, 800);
   frameRate(120);
-  ourImage= loadImage("http://dreamatico.com/data_images/flowers/flowers-4.jpg");
+  ourImage= loadImage("https://www.clarkflower.com/gifs/hp-birthday.jpg");
   ourImage.resize (width, height);
   ourImage.loadPixels();                              // load the pixels array of the image
   noFill();

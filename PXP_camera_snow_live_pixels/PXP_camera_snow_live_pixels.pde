@@ -1,4 +1,4 @@
-// The world pixel by pixel 2018
+// The world pixel by pixel 2019
 // Daniel Rozin
 // snows live pixels, note that this just adds to an array so it will die eventually
 import processing.video.*;
@@ -22,15 +22,16 @@ void draw() {
       int randiY= (int)random(0, floor[randiX]);
       snowFlakes = (Flake[])append(snowFlakes, new Flake(randiX, randiY));   // create new flake and add to our array
     }
-  }
-  ourVideo.loadPixels();                               // load the pixels array of the video                             // load the pixels array of the window  
-  loadPixels(); 
 
-  for (int i = 0; i < snowFlakes.length; i++) {
-    snowFlakes[i].drawFlake();                        // draw all the flakes we have in our growing array
-  }
+    ourVideo.loadPixels();                               // load the pixels array of the video                             // load the pixels array of the window  
+    loadPixels(); 
 
-  updatePixels();
+    for (int i = 0; i < snowFlakes.length; i++) {
+      snowFlakes[i].drawFlake();                        // draw all the flakes we have in our growing array
+    }
+
+    updatePixels();
+  }
 }
 
 class Flake {                                          // this is our class that stores one flake
@@ -44,7 +45,7 @@ class Flake {                                          // this is our class that
   }
   void  drawFlake() {   
     if (!dead) {                                    // if flake is not dead them move down
-      posY+=1;                   
+      posY+=1;
     }
     if (posY>=floor[posX] && !dead) {                // if you reached the floor then die
       floor[posX]--;                                 // and increase the column of the floor 

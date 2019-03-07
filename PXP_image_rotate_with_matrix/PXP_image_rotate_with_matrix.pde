@@ -1,4 +1,4 @@
-// The world pixel by pixel 2018
+// The world pixel by pixel 2019
 // Daniel Rozin
 // rotate an image by using copy() and rotate()
 
@@ -8,7 +8,7 @@ float angle =0;
 void setup() {
   size(1000, 800);
   frameRate(120);
-  ourImage= loadImage("http://dreamatico.com/data_images/flowers/flowers-4.jpg");
+  ourImage= loadImage("http://images6.fanpop.com/image/photos/40600000/Seal-Pup-seals-40692293-1024-768.jpg");
   ourImage.resize (width, height);
 }
 
@@ -17,7 +17,8 @@ void draw() {
   image(ourImage, 0, 0);                // draw the whole image
   translate(mouseX, mouseY);            // we want to center around mouse
   rotate(angle);                        // anythng done after this will be rotated
-  copy(ourImage, mouseX-50, mouseY-50, 100, 100, -100, -100, 200, 200);
+  copy(ourImage, mouseX-50, mouseY-50, 100, 100,  -100, -100, 200, 200);
+  
 
   // copy takes the following params:
   // source image,

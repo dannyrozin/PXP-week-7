@@ -1,4 +1,4 @@
-// The world pixel by pixel 2018
+// The world pixel by pixel 2019
 // Daniel Rozin
 // displace pixels vertically, initialy with sine wave but drag mouse to set a different displacement
 import processing.video.*;
@@ -31,7 +31,9 @@ void draw() {
 }
 
 void mouseDragged() {
-  displacements[mouseX]= mouseY;
+  for (int x=0; x < 20; x++) {                                   // doing it for 20 columns every time to make sure wedont skip too many
+    if (mouseX+x< width) displacements[mouseX+x]= height-mouseY;   // got to check that we will not be accessing items out the bounds of the array
+  }
 }
 
 // our function for getting color components , it requires that you have global variables

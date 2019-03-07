@@ -1,4 +1,4 @@
-// The world pixel by pixel 2018
+// The world pixel by pixel 2019
 // Daniel Rozin
 // rotate pixels 
 import processing.video.*;
@@ -26,10 +26,13 @@ void draw() {
       float distanceToMouse= dist (x, y, mouseX, mouseY);
       if (distanceToMouse< 200) {
        // try this for an interesting effect
-        //shiftX =mouseX-(mouseX *cosangle-mouseY *sinangle) ;            // calculating the source pixel for the center pixel so we can center the rotation around the mouse
-        //shiftY =   mouseY-(mouseX*sinangle +mouseY*cosangle);
-        //cosangle = cos(distanceToMouse/100.0);                              // we calculate this once so that we don't need to calculate for each pixel
-        //sinangle = sin(distanceToMouse/100.0);
+       /*
+        shiftX =mouseX-(mouseX *cosangle-mouseY *sinangle) ;            // calculating the source pixel for the center pixel so we can center the rotation around the mouse
+        shiftY =   mouseY-(mouseX*sinangle +mouseY*cosangle);
+        cosangle = cos(distanceToMouse/100.0);                              // we calculate this once so that we don't need to calculate for each pixel
+        sinangle = sin(distanceToMouse/100.0);
+        */
+        
         float sourceX = x *cosangle-y *sinangle + shiftX ;        
         float sourceY = x*sinangle +y*cosangle +shiftY; 
         sourceX=constrain (sourceX, 0, width-1);         //make sure we are not going outside of the image

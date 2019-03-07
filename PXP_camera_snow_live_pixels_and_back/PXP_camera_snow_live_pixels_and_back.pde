@@ -1,4 +1,4 @@
-// The world pixel by pixel 2018
+// The world pixel by pixel 2019
 // Daniel Rozin
 // snows live pixels, click mouse to have pixels return to their initial locations
 import processing.video.*;
@@ -23,19 +23,20 @@ void draw() {
       int randiY= (int)random(1, floor[randiX]);
       snowFlakes = (Flake[])append(snowFlakes, new Flake(randiX, randiY));   // create new flake and add to our array
     }
-  }
-  ourVideo.loadPixels();                               // load the pixels array of the video                             // load the pixels array of the window  
-  loadPixels(); 
 
-  for (int i = 0; i < snowFlakes.length; i++) {
-    if (snow){
-      snowFlakes[i].flakeDown();                        // draw all the flakes we have in our growing array
-    }else{
-      snowFlakes[i].flakeUp();
+    ourVideo.loadPixels();                               // load the pixels array of the video                             // load the pixels array of the window  
+    loadPixels(); 
+
+    for (int i = 0; i < snowFlakes.length; i++) {
+      if (snow) {
+        snowFlakes[i].flakeDown();                        // draw all the flakes we have in our growing array
+      } else {
+        snowFlakes[i].flakeUp();
+      }
     }
-  }
 
-  updatePixels();
+    updatePixels();
+  }
 }
 
 class Flake {                                          // this is our class that stores one flake
@@ -49,7 +50,7 @@ class Flake {                                          // this is our class that
   }
   void  flakeDown() {   
     if (!dead) {                                    // if flake is not dead them move down
-      posY+=1;                   
+      posY+=1;
     }
     if (posY>=floor[posX] && !dead) {                // if you reached the floor then die
       floor[posX]--;                                 // and increase the column of the floor 
@@ -59,8 +60,8 @@ class Flake {                                          // this is our class that
     PxPSetPixel(posX, posY, R, G, B, 255, pixels, width);     // set the RGB of our to screen
     PxPSetPixel(sourceX, sourceY, 0, 0, 0, 255, pixels, width);   // add this tp remove the original pixel
   }
-  
-  
+
+
   void  flakeUp() {                                  // this is the method for having them go back home
     if (!dead) {                                    // if flake is not dead them move towards its source
       posY= (posY*99+ sourceY)/100;                  // its 1% source and 99 percent current position to slow it down
@@ -69,7 +70,7 @@ class Flake {                                          // this is our class that
       floor[posX]= height-2;                                 // and reset the floor for the next snow
       dead = true;
     }
-     PxPSetPixel(sourceX, sourceY, 0, 0, 0, 255, pixels, width);   // add this tp remove the original pixel
+    PxPSetPixel(sourceX, sourceY, 0, 0, 0, 255, pixels, width);   // add this tp remove the original pixel
     PxPGetPixel(sourceX, sourceY, ourVideo.pixels, width);     // get the RGB from the original location of the pixel
     PxPSetPixel(posX, posY, R, G, B, 255, pixels, width);     // set the RGB of our to screen
   }
@@ -90,8 +91,7 @@ void PxPGetPixel(int x, int y, int[] pixelArray, int pixelsWidth) {
 void mousePressed() {
   snow = !snow;
   for (int i= 0; i< snowFlakes.length; i++)snowFlakes[i].dead=false;  
- if (snow)snowFlakes= new Flake[0];
-  
+  if (snow)snowFlakes= new Flake[0];
 }
 //our function for setting color components RGB into the pixels[] , we need to efine the XY of where
 // to set the pixel, the RGB values we want and the pixels[] array we want to use and it's width

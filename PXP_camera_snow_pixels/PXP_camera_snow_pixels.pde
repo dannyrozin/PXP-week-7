@@ -1,4 +1,4 @@
-// The world pixel by pixel 2018
+// The world pixel by pixel 2019
 // Daniel Rozin
 // snow  pixels with class and objects
 import processing.video.*;
@@ -24,17 +24,18 @@ void draw() {
       PxPGetPixel(randiX, randiY, ourVideo.pixels, width); 
       snowFlakes = (Flake[])append(snowFlakes, new Flake(randiX, randiY, R, G, B)); // create new flake and add to our array
     }
+
+    ourVideo.loadPixels();                               // load the pixels array of the video                             // load the pixels array of the window  
+    loadPixels(); 
+
+    for (int i = 0; i < snowFlakes.length; i++) {
+      snowFlakes[i].drawFlake();                             // draw all the flakes we have in our growing array
+    }
+
+
+
+    updatePixels();
   }
-  ourVideo.loadPixels();                               // load the pixels array of the video                             // load the pixels array of the window  
-  loadPixels(); 
-
-  for (int i = 0; i < snowFlakes.length; i++) {
-    snowFlakes[i].drawFlake();                             // draw all the flakes we have in our growing array
-  }
-
-
-
-  updatePixels();
 }
 
 class Flake {                                            // our flake class that stores a pixel and its colors

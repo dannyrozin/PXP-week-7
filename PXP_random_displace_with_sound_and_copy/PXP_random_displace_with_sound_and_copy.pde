@@ -1,4 +1,4 @@
-// The world pixel by pixel 2018
+// The world pixel by pixel 2019
 // Daniel Rozin
 // randomly displace rectages in an image based on sound  image by using copy() 
 
@@ -11,7 +11,7 @@ float angle =0;
 void setup() {
   size(1000, 800,P3D);        // some things such as copy() work much faster in P3D mode
   frameRate(120);
-  ourImage= loadImage("http://dreamatico.com/data_images/flowers/flowers-4.jpg");
+  ourImage= loadImage("http://pixdaus.com/files/items/pics/5/74/637574_c63462dacd6b87e90fb95a85197c59bb_large.jpg");
   ourImage.resize (width, height);
   in = new AudioIn(this, 0);             // open libraries
   amp = new Amplitude(this);            
