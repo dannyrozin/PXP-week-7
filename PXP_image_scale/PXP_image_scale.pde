@@ -1,8 +1,7 @@
-// The world pixel by pixel 2019
+// The world pixel by pixel 2020
 // Daniel Rozin
 // scale an image
 
-int R, G, B, A;          // you must have these global varables to use the PxPGetPixel()
 PImage ourImage;
 float scale = 2;
 void setup() {
@@ -64,7 +63,7 @@ void draw() {
 // our function for getting color components , it requires that you have global variables
 // R,G,B   (not elegant but the simples way to go, see the example PxP methods in object for 
 // a more elegant solution
-
+int R, G, B, A;          // you must have these global varables to use the PxPGetPixel()
 void PxPGetPixel(int x, int y, int[] pixelArray, int pixelsWidth) {
   int thisPixel=pixelArray[x+y*pixelsWidth];     // getting the colors as an int from the pixels[]
   A = (thisPixel >> 24) & 0xFF;                  // we need to shift and mask to get each component alone

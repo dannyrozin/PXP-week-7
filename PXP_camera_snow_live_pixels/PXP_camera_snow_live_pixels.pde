@@ -1,6 +1,6 @@
-// The world pixel by pixel 2019
+// The world pixel by pixel 2020
 // Daniel Rozin
-// snows live pixels, note that this just adds to an array so it will die eventually
+// snows live pixels, note that this just adds to an array so it will eventually slow down
 import processing.video.*;
 Flake[] snowFlakes= new Flake[0];
 int [] floor = new int[1280];

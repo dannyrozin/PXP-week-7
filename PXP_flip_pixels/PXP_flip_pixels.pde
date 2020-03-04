@@ -1,4 +1,4 @@
-// The world pixel by pixel 2019
+// The world pixel by pixel 2020
 // Daniel Rozin
 // fliping pixels on X and Y
 import processing.video.*;
@@ -18,7 +18,7 @@ void draw() {
   loadPixels(); 
   
   
-  // this next part flipps horizontally from the PImage to the screen
+  // this next part flipps horizontally from the video to the screen
   for (int x = 0;x<width/2; x++) {     // do the left half of the image
     for (int y = 0;y<height; y++) {  
      int sourceX= width-1-x;          // we are flipping around the center
