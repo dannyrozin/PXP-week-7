@@ -1,4 +1,4 @@
-// The world pixel by pixel 2020
+// The world pixel by pixel 2021
 // Daniel Rozin
 // snows live pixels, note that this just adds to an array so it will eventually slow down
 import processing.video.*;

@@ -1,4 +1,4 @@
-// The world pixel by pixel 2020
+// The world pixel by pixel 2021
 // Daniel Rozin
 // randomly displaces  pixels
 import processing.video.*;
@@ -15,7 +15,7 @@ void draw() {
   if (ourVideo.available())  ourVideo.read();           // get a fresh frame as often as we can
   ourVideo.loadPixels();                               // load the pixels array of the video                             // load the pixels array of the window  
   loadPixels(); 
-  //randomSeed(0);          // add this to get the random not flicker
+ // randomSeed(0);          // add this to get the random not flicker
   for (int x =  0; x< width; x++) {                   // visit all pixels
     for (int y = 0; y< height; y++) {    
      float distToMouse= dist(mouseX, mouseY, x,y)/10;       // get the distance from the mouse to this pixel

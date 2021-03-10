@@ -1,4 +1,4 @@
-// The world pixel by pixel 2020
+// The world pixel by pixel 2021
 // Daniel Rozin
 // fliping pixels on X and Y using the copy() function
 import processing.video.*;
