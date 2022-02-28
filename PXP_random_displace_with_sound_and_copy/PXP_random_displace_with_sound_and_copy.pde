@@ -1,4 +1,4 @@
-// The world pixel by pixel 2021
+// The world pixel by pixel 2022
 // Daniel Rozin
 // randomly displace rectages in an image based on sound  image by using copy() 
 
@@ -10,7 +10,7 @@ float angle =0;
 void setup() {
   size(1000, 800,P3D);        // some things such as copy() work much faster in P3D mode
   frameRate(120);
-  ourImage= loadImage("http://pixdaus.com/files/items/pics/5/74/637574_c63462dacd6b87e90fb95a85197c59bb_large.jpg");
+  ourImage= loadImage("https://i.natgeofe.com/k/4566f48c-4997-41c9-9854-101246c25702/ring-tailed-lemur-pair_4x3.jpg");
   ourImage.resize (width, height);
   in = new AudioIn(this, 0);             // open libraries
   amp = new Amplitude(this);            

@@ -1,4 +1,4 @@
-// The world pixel by pixel 2021
+// The world pixel by pixel 2022
 // Daniel Rozin
 // displace pixels vertically, initialy with sine wave but drag mouse to set a different displacement
 import processing.video.*;

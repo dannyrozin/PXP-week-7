@@ -1,4 +1,4 @@
-// The world pixel by pixel 2021
+// The world pixel by pixel 2022
 // Daniel Rozin
 // snows live pixels, click mouse to have pixels return to their initial locations
 import processing.video.*;

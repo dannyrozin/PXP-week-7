@@ -1,4 +1,4 @@
-// The world pixel by pixel 2020
+// The world pixel by pixel 2022
 // Daniel Rozin
 // rotate pixels 
 import processing.video.*;
